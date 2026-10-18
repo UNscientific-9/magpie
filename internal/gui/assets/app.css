@@ -1248,7 +1248,11 @@ body.window .field.solo { grid-column: auto; }
 .heat-title { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
 .heat-title b { font-size: 12.5px; font-weight: 600; }
 .heat-title span { font-size: 11px; color: var(--muted); }
-.heat-scroll { overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scrollbar-width: thin; padding-bottom: 4px; }
+/* no scrollbar-width here: in Chromium (WebView2) it drops every
+   ::-webkit-scrollbar rule, so the card scrolled under Windows' classic bar,
+   arrows and all, unlike every other box in the app; the app's own 10px
+   rounded thumb instead (see `.segs.regions` for the same trap) */
+.heat-scroll { overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; padding-bottom: 4px; }
 .heat-grid { display: grid; grid-template-columns: auto repeat(53, minmax(10px, 1fr)); grid-template-rows: auto repeat(7, auto); gap: 3px; min-width: min-content; max-width: calc(3em + 53 * 21px); font-size: 10px; color: var(--muted); }
 .heat-grid i { aspect-ratio: 1; border-radius: 3px; min-width: 0; }
 .heat-grid i:hover { outline: 1px solid var(--fg-2); outline-offset: -1px; }

@@ -1296,6 +1296,13 @@ the Sessions page's agents and a provider's regions) in Chromium with its
 scrollbars shown (ARNO on Discord): off a Mac it scrolls under the app's
 6px thumb, not Windows' classic bar; on a Mac the system's bar is left.
 
+`usage-heat-scrollbar.test.cjs` opens Usage's Requests tab where the heatmap
+card scrolls sideways in itself (the reporter's card, from a screenshot), in
+Chromium with its scrollbars shown: the card's box names no `scrollbar-width`,
+and the app's own `::-webkit-scrollbar` rules reach its bar, so it is drawn as
+a page's is (the same 10px rounded thumb, no arrow buttons) rather than under
+Windows' classic bar. The same trap `.segs.regions` hit, from the other side.
+
 `own-skill.test.cjs` opens the Library with Claude Code's own impeccable in
 the library skill's way (StringKe, JasonLeeForOnly on Discord): the warning
 row says so in the reader's language and has "Use the library's" and "Keep
